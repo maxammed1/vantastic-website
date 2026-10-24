@@ -1,0 +1,15 @@
+{
+  // Workers + Static Assets, same setup as the other client sites. Keep committed:
+  // a Git-connected Worker with no wrangler config deploys and serves nothing.
+  // run_worker_first: true so the www -> bare-domain redirect in worker.js sees page requests too.
+  "name": "vantastic",
+  "main": "worker.js",
+  "compatibility_date": "2026-07-07",
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  }
+}

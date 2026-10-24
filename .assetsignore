@@ -1,0 +1,15 @@
+# Repo files that must not be served from the public site.
+README.md
+wrangler.jsonc
+.assetsignore
+worker.js
+leadlanding-post.js
+.wrangler/
+node_modules/
+# Repo history and tooling: never publish.
+.git
+.github
+.gitignore
+.wrangler
+node_modules
+tools

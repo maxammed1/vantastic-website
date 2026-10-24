@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rides for Hospitals & Care Homes | Vantastic Transit</title>
+<meta name="description" content="Wheelchair van and medical rides for discharge planners, care homes, dialysis units and clinics in Wabasha and Winona counties. Monthly accounts, one invoice.">
+<link rel="canonical" href="https://vantastictransit.net/facilities/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vantastic Transit">
+<meta property="og:title" content="Rides for Hospitals & Care Homes | Vantastic Transit">
+<meta property="og:description" content="Wheelchair van and medical rides for discharge planners, care homes, dialysis units and clinics in Wabasha and Winona counties. Monthly accounts, one invoice.">
+<meta property="og:url" content="https://vantastictransit.net/facilities/">
+<meta name="theme-color" content="#12355b">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Outfit:wght@600;800&display=swap">
+<link rel="stylesheet" href="/styles.css?v=1">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="40" height="40"><span>Vantastic Transit<small>Lake City, Minnesota</small></span></a>
+  <nav aria-label="Main"><a class="hide-sm" href="/#services">Rides</a><a class="hide-sm" href="/facilities/">Hospitals &amp; care homes</a><a class="hide-sm" href="/drive/">Drive with us</a>
+  <a class="btn btn-call" href="tel:+15072724901"><span aria-hidden="true">📞</span> (507) 272-4901</a></nav>
+</div></header>
+<main id="main">
+
+<section class="hero hero-sm"><div class="wrap"><p class="kicker">For hospitals, clinics, dialysis units and care homes</p>
+<h1>A ride partner you can call once</h1>
+<p class="lead">Discharge planners, social workers and care home staff use Vantastic to get patients and residents where they need to go, in a wheelchair van or a regular seat.</p></div></section>
+<section class="wrap section two-col">
+<div><h2>What you get</h2><ul class="checks">
+<li><b>Discharge rides:</b> call in the morning, ride home that day when a van is open.</li>
+<li><b>Standing rides:</b> dialysis and therapy on a fixed weekly schedule.</li>
+<li><b>Monthly account:</b> one invoice for all your residents' trips.</li>
+<li><b>Rochester days:</b> group Mayo appointments on the same van.</li>
+<li><b>Trained drivers</b> with background studies, and inspected, insured vans.</li>
+<li><b>Trip records</b> for every ride: pick-up, drop-off and times.</li></ul>
+<p>Prices are set before the ride. Ask us for our rate sheet.</p></div>
+<div><form class="lead-form card" id="account" action="/api/request" method="post">
+<h2>Set up an account</h2>
+<input type="hidden" name="kind" value="facility">
+<div class="grid2">
+<label><span>Your name <span aria-hidden="true">*</span></span><input type="text" name="name" autocomplete="name" required></label>
+<label><span>Phone <span aria-hidden="true">*</span></span><input type="tel" name="phone" autocomplete="tel" required></label>
+<label class="full"><span>Email (optional)</span><input type="email" name="email" autocomplete="email"></label>
+<label class="full"><span>Organization <span aria-hidden="true">*</span></span><input type="text" name="organization" autocomplete="organization" required></label><label><span>Your role</span><select name="role"><option value="">Choose one</option><option>Discharge planner / case manager</option><option>Social worker</option><option>Care home or assisted living staff</option><option>Clinic staff</option><option>County or program staff</option><option>Other</option></select></label><label><span>About how many rides a month?</span><select name="volume"><option value="">Choose one</option><option>1-5</option><option>6-20</option><option>21-50</option><option>More than 50</option></select></label><label class="full"><span>What do you need?</span><textarea name="message" rows="4"></textarea></label>
+</div><label class="hp" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+<button class="btn btn-primary" type="submit">Send</button>
+<p class="form-status" role="status" aria-live="polite"></p>
+<p class="small">Or call <a href="tel:+15072724901">(507) 272-4901</a>. We call you back the same business day.</p>
+</form></div></section>
+</main>
+<footer class="site-footer"><div class="wrap foot-grid">
+  <div><strong>Vantastic Transit LLC</strong><br>117 S Washington St, Suite 106, Lake City, MN 55041<br><a href="tel:+15072724901">(507) 272-4901</a> · <a href="mailto:vantastic_transit@yahoo.com">vantastic_transit@yahoo.com</a><br>Office hours: Monday to Friday, 8 AM to 5 PM</div>
+  <div><strong>Serving</strong><br>Wabasha and Winona counties: Lake City, Wabasha, Plainview, Kellogg, Winona, St. Charles, Lewiston, with trips to Rochester, Red Wing and La Crosse.</div>
+  <div><strong>Pages</strong><br><a href="/#request">Book a ride</a> · <a href="/facilities/">For hospitals and care homes</a> · <a href="/drive/">Drive with us</a></div>
+</div><p class="wrap small">© 2026 Vantastic Transit LLC</p></footer>
+<script src="/form.js" defer></script>
+</body>
+</html>
