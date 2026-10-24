@@ -2,6 +2,7 @@
 
    POST /api/request -> record the form in Lead Landing (ride request, facility account or driver application)
    everything else   -> served from the static assets (ASSETS binding)
+   incoming email    -> info@vantastictransit.net copied to the owners' inbox and Brother (email handler)
 
    Lead Landing is the ONLY CRM for this business. The Lead Landing workflow on each form
    creates the contact, deal card, call-back task and owner alert email, so the Worker sends no email.
@@ -15,6 +16,10 @@ const LL_FORMS = {
   driver: "OeiRb2mBB7uJxtkseAW8", // "Vantastic Driver Application"
 };
 const PHONE_DISPLAY = "(507) 272-4901";
+
+/* Cloudflare Email Routing sends info@ to this Worker. Every address here must be a
+   verified destination in Email Routing. Override with Worker variable FORWARD_TO (comma list). */
+const FORWARD_TO = ["vantastic_transit@yahoo.com", "maxammed@gmail.com"];
 
 const clean = (v, max = 500) => String(v == null ? "" : v).trim().slice(0, max);
 
@@ -103,5 +108,15 @@ export default {
       return handleRequest(request, env);
     }
     return env.ASSETS.fetch(request);
+  },
+
+  async email(message, env) {
+    const to = env.FORWARD_TO ? env.FORWARD_TO.split(",").map((s) => s.trim()).filter(Boolean) : FORWARD_TO;
+    /* Forward to each inbox on its own, so one failing address doesn't stop the other. */
+    const results = await Promise.allSettled(to.map((addr) => message.forward(addr)));
+    results.forEach((r, i) => {
+      if (r.status === "rejected") console.log(`email forward to ${to[i]} failed: ${String(r.reason)}`);
+    });
+    if (results.every((r) => r.status === "rejected")) message.setReject("Delivery failed, please call (507) 272-4901");
   },
 };

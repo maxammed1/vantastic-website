@@ -20,3 +20,8 @@ Domain vantastictransit.net (Cloudflare). www redirects to the bare domain in wo
 - Office hours M-F 8-5 (from state listing).
 - No prices on the site until the rate card is approved. Medical Assistance is "call and ask" until DHS approves the new owners.
 - Add real photos of the van and owners.
+
+## Email
+info@vantastictransit.net: Cloudflare Email Routing rule "info" -> action "Send to a Worker" -> `vantastic`.
+The Worker's `email()` handler forwards each message to vantastic_transit@yahoo.com and maxammed@gmail.com
+(`FORWARD_TO` in worker.js, or Worker variable `FORWARD_TO`). Both must be verified destination addresses in Email Routing.
