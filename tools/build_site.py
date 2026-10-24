@@ -3,7 +3,7 @@ import json, pathlib
 OUT = pathlib.Path(__file__).resolve().parent.parent
 DOMAIN = "https://vantastictransit.net"
 PHONE, TEL = "(507) 272-4901", "+15072724901"
-EMAIL = "vantastic_transit@yahoo.com"
+EMAIL = "info@vantastictransit.net"
 ADDR = "117 S Washington St, Suite 106, Lake City, MN 55041"
 TOWNS = ["Lake City", "Wabasha", "Plainview", "Kellogg", "Winona", "St. Charles", "Lewiston", "Rochester trips"]
 
